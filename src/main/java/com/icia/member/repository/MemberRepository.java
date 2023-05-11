@@ -14,15 +14,22 @@ public class MemberRepository {
     private SqlSessionTemplate sql;
 
     public MemberDTO save(MemberDTO memberDTO) {
+        sql.insert("Member.save", memberDTO);
+        System.out.println("insert 후 memberDTO = " + memberDTO);
+        return memberDTO;
     }
 
     public MemberDTO findByMemberEmail(String loginEmail) {
         return sql.selectOne("Member.findByMemberEmail", loginEmail);
     }
 
-//    public void saveFile(MemberFileDTO boardFileDTO) {
-//        sql.insert("Member.saveFile", memberFileDTO);
-//    }
+    public void saveFile(MemberFileDTO memberFileDTO) {
+        sql.insert("Member.saveFile", memberFileDTO);
+    }
+
+    public MemberDTO login(MemberDTO memberDTO) {
+        return sql.selectOne("Member.login", memberDTO);
+    }
 
 //    public List<MemberFileDTO> findFile(Long boardId) {
 //        return sql.selectList("Member.findFile", memberId);

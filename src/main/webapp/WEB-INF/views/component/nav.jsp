@@ -15,7 +15,7 @@
       <a href="/member/login">로그인</a>
     </li>
     <li>
-      <a href="/board/">글목록</a>
+      <a href="/board/list">글목록</a>
     </li>
     <li class="login-name" id="login-area">
 
@@ -28,9 +28,9 @@
   const loginEmail = '${sessionScope.loginEmail}';
   console.log(loginEmail.length);
   if (loginEmail.length != 0) {
-    loginArea.innerHTML = "<a href='/mypage' style='color: black;'>"+loginEmail +"님 환영해요!</a>"+
-            "<a href='/logout'>logout</a>";
+    loginArea.innerHTML = "<a href='/member/mypage' style='color: black;'>"+loginEmail +"님 환영해요!</a>"+
+            "<a href='/member/logout'>logout</a>";
   } else {
-    loginArea.innerHTML = "<a href='/login'>login</a>";
+    loginArea.innerHTML = "<a href='/member/login'>login</a>";
   }
 </script>
