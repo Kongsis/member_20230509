@@ -22,7 +22,7 @@
             <h6 id="email-reResult"></h6> <br>
             <input type="text" id="password-check" onblur="loginPassword_check()" name="memberPassword" placeholder="비밀번호">
             <h6 id="password-reResult"></h6> <br>
-            <input type="submit" onclick="login_check()" value="로그인">
+            <input type="submit" value="로그인">
         </form>
     </div>
 <%@include file="../component/footer.jsp"%>
@@ -49,24 +49,5 @@
             result.style.display = "none";
         }
     }
-
-    // const login_check = () => {
-    //     const email = document.getElementById("email-check").value;
-    //     const password = document.getElementById("password-check").value;
-    //     $.ajax({
-    //         type: "post",
-    //         url: "/member/login-check",
-    //         data: {
-    //             "memberEmail": email,
-    //             "memberPassword": password
-    //         },
-    //         success: function () {
-    //             // alert("로그인");
-    //         },
-    //         error: function () {
-    //             alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-    //         }
-    //     })
-    // }
 </script>
 </html>

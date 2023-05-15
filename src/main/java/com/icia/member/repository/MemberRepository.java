@@ -15,7 +15,6 @@ public class MemberRepository {
 
     public MemberDTO save(MemberDTO memberDTO) {
         sql.insert("Member.save", memberDTO);
-        System.out.println("insert 후 memberDTO = " + memberDTO);
         return memberDTO;
     }
 
@@ -31,7 +30,23 @@ public class MemberRepository {
         return sql.selectOne("Member.login", memberDTO);
     }
 
-//    public List<MemberFileDTO> findFile(Long boardId) {
-//        return sql.selectList("Member.findFile", memberId);
-//    }
+    public List<MemberDTO> findAll() {
+        return sql.selectList("Member.findAll");
+    }
+
+    public MemberDTO findById(Long id) {
+        return sql.selectOne("Member.findById", id);
+    }
+
+    public void update(MemberDTO memberDTO) {
+        sql.update("Member.update", memberDTO);
+    }
+
+    public void delete(Long id) {
+        sql.delete("Member.delete", id);
+    }
+
+    public MemberFileDTO findFile(Long id) {
+        return sql.selectOne("Member.findFile",id);
+    }
 }

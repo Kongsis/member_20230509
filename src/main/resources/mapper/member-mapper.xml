@@ -13,6 +13,10 @@
         values (#{originalMemberFileName}, #{storedMemberFileName}, #{memberId})
     </insert>
 
+    <select id="findFile" parameterType="Long" resultType="memberFile" >
+        select * from member_file_table where memberId =#{memberId}
+    </select>
+
     <select id="findByMemberEmail" parameterType="String" resultType="member">
         select * from member_table where memberEmail = #{memberEmail}
     </select>
@@ -32,6 +36,7 @@
     <update id="update" parameterType="member">
         update member_table set memberName=#{memberName}, memberMobile=#{memberMobile} where id=#{id}
     </update>
+
 
     <delete id="delete" parameterType="Long">
         delete from member_table where id = #{id}
